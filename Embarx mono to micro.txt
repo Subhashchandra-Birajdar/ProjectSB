@@ -1,0 +1,239 @@
+
+==== May I please have your number? So i would really like to get to know you better==
+
+API - Application programming interface
+-->
+API is a protocol and rules
+API through two application can communicate
+API is intermediater between two application/software
+
+example :
+Restaurant (application)
+Kitchen (another system/service)
+Menu ( API Specifications)
+Waiter (API)
+
+Types of API Requests
+---- > Get,post,put,delete
+
+Need of API
+--> reduce manual efforts and automate everything, so developer focus on business logic
+
+Get
+--->
+Retrieve or GET resource from server
+Used only to read data(200, or 404)
+
+Post Request
+--> Create resource from server( user login/registration) -- response code(201,400)
+
+PUT Request
+--> Update existing resource on Server, only use for update not for get/create
+
+DELETE Request
+--> used to DELETE resource from Server( delete the account), not used for get/update/create, response(200,400,404)
+
+Status code
+ --> like acknowledgement from server(success or failure)
+classification of status code( 5 category)
+1xx -> information
+2xx -> successful
+3xx -> redirection
+4xx -> client Error
+5xx -> server Error
+
+Commonly used status code
+--> 
+200 --> OK
+201 --> Created
+204 --> No content(nothing to return)
+301 --> moved permanently
+400 --> bad request
+401 --> Unauthorized(don't have access)
+403 --> forbidden(server refuse to return(because of access)
+404 --> not found
+500 --> internal server Error
+
+Why do you need web framework ?
+-->
+website have a lot in common
+security, database, URLs, Authentication..more
+Should you do this everytime from scratch ?
+
+Think of building a House
+-->
+you would need Blueprint and Tools
+That's how web developement works
+Developers had to build from scratch
+
+what if..
+you should have prefabricate components?
+could you assemble faster?
+could you reduce error? (rather than doing repetative things
+
+what is web framework
+---> (collection of tools and modules )
+web framework is nothing but collection of tools and modules that is needed to do standard tasks across every web application.
+
+Java based Web Framwork --> Spring Boot(Java)
+Every website work on client server architecture, so client is the device or application
+
+characteristics of client
+----->
+contains UI(user interface)
+send request services and receive response as data.
+
+server
+--->
+server is device or application that provide service or resource to client.
+server designed to handle multiple request from the client and return the response data.
+server hosts the website.
+
+characteristics of server
+--->
+always on(connected to internet)
+handle multiple requests
+send data to client based on request
+Example : suppose ecommerce website(client), if he send any request goes to server, it process the request based on the send data to the client.
+
+why are api's needed?
+-->
+share data
+speed up development(save the time and productivity)
+Extend the reach & functionality of software
+
+popular API's
+---->
+Google maps API(uber use this for rauting infomation)
+twitter API
+Facebook's Graph API
+Amazon S3 API
+
+Types of API
+-->
+1. Internal API(one team to other team), this api can't expose outside the world(like notificatio)
+2. External API's(use by anyone facebook, google)
+3. Partner API's
+
+Spring is java based framwork
+
+Features of Spring framwork
+------->
+IOC(inversion of Control, manage lifecycle of bean)
+DI(Dependency injection)
+loose coupling
+Data access( accessing data from different sources(jdbc,jpa,hibernate))
+MVC framework(Separation in code(model(entity)-view(html&JSP)-controller)
+Transaction Management(on object)
+Security
+Testing support(Junit and integration)
+Internalization(i18n) and Locallization
+
+Use cases of spring 
+---> basically use for web development
+enterprise app, microservices architecture, web application
+
+Coupling
+--->
+Coupling means how closely connected components or systems
+1. tight coupling --> hard to maintain,scalable,modularity, if any component not working
+2. loose coupling --> by default spring provide this, less dependent and no impact on the other
+
+spring core
+--->
+Loose coupling, IOC, DI, beans
+Spring container(manages the object, provide objects runtime) & configuration.
+Bean factory(old simplest one, provide basic features) & applicationContext(new & advance has more features.
+As a developer, we can tell to spring, manage this beans and provide classpath in XML or annotation base configuration
+Basically configuring contain bean defination, we have to define/declare the beans in XML base configuration
+Annotations is an meta data that we can use with code.
+
+Spring review
+-->
+Explicit bean configuration
+no embeded server
+component scanning
+boilerplate code
+
+SpringBoot ?
+-->
+Open source, java based framework, used to create stand alone production-grade spring based applications
+
+Spring vs springboot
+Spring ==> Lots of steps invoved in setting up, configuration, writing boilerplate code,deployment of the app
+springboot ==> set of pre-configuratin/defaults, eliminating the need of boilerplate code that was involved in spring application.
+
+Components of springboot
+---->
+Springboot starter(kind of library, bundeled inside)
+auto configuration
+spring actuator
+embeded server
+springboot devtools
+
+Advantages of springboot
+-->
+stand alone and quick start
+starter code
+less configuration
+reduced cost and application developement time
+
+why do developer love spring boot
+-->
+java based
+fast, easy
+comes with embeded server
+avoid boilerplate code and auto-configuration
+
+Spring boot architecture
+-->
+Presentation layer -- front end view(controller class exist, accept the request validate the input, send to service)
+service layer --> business related logics, evaluations, decision making processing of data at this layer.
+data access layer --> where all the repository classes, reponsible for intracting with database, &  perform operation.
+
+Browser ==> Controller(Request&Response) <-> Service <-> Repository <==> Database 
+
+Spring Initializr
+Group --> opposite to the application URL
+Artifact --> project name
+Dependencies are managed through Maven/Gradle.
+
+@RestController --> Handle http request
+dispatcherServlet --> Entry point, every request goes through this way
+
+Rest API - Representation state transfer application programming interface
+-->
+REST API is popular architectural style to designing network application
+Web services are build following the rest achitectural style knows as restful web services.
+
+Benefits of REST API
+-->
+Simplicity, Scalabilty, flexibility, visibility
+
+1.HTTPS and HTTP, basically use to tranfering hypertext to the view
+2. Both can transfer data in various format including html,json and plain text
+
+
+Jackson --> java object to json and json to java object , in springboot internally happen
+@Pathvariable --> we use in springboot to pass value dynamically through URL. it will match to the URL in controller, so dynamic URL handle by pathvariable.
+
+Advantages of JPA
+---->
+Easy and Simple, Makes quering easier
+Allows to save & update object (Perform DML operation)
+Easy integration with springboot, springboot inbuilt supports
+
+Data Access Layer
+--->
+Responsible for performing CRUD operation
+Example : Create job, read job, update job, delete job
+
+JPA for standard implementation is Hibernate
+--> get predefined methods
+
+H2 database
+-->
+open source relational database
+written in java, fast in-memory database
+not used in production-grade application
+

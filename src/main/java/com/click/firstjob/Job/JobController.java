@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/jobs")
+@RequestMapping("/jobs") // this act as a base url
+// Requestmapping is used on class level and method level
 //specialise version of controller annotation, controller+Responsebody ,Restful representation
 // dispatcher servlet is heart of springboot
 // by default error page
@@ -31,6 +32,8 @@ public class JobController {
         return new ResponseEntity<>("Job added successfully", HttpStatus.CREATED);
     }
 
+    // shorter version of requestmapping annotation, requestmapping used to map specific request to the method
+    //@RequestMapping(value = "/{id}",method = RequestMethod.GET)
     @GetMapping("/{id}")
     public ResponseEntity<Job> getById(@PathVariable("id") Long id) {
         Job job = jobService.getById(id);
